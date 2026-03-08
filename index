@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Frame2Brand - Home</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0b0b0c;
+    }
+    .orange-glow {
+      box-shadow: 0 0 40px rgba(255,115,0,0.3);
+    }
+    .gradient-bg {
+      background: radial-gradient(circle at top left, rgba(255,115,0,0.15), transparent 40%),
+                  radial-gradient(circle at bottom right, rgba(255,115,0,0.1), transparent 40%);
+    }
+    
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    @keyframes scaleIn {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
+    }
+    
+    .animate-fadeInUp {
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+    
+    .animate-fadeIn {
+      animation: fadeIn 1s ease-out forwards;
+    }
+    
+    .animate-slideInLeft {
+      animation: slideInLeft 0.8s ease-out forwards;
+    }
+    
+    .animate-slideInRight {
+      animation: slideInRight 0.8s ease-out forwards;
+    }
+    
+    .animate-scaleIn {
+      animation: scaleIn 0.6s ease-out forwards;
+    }
+    
+    .animate-pulse {
+      animation: pulse 2s ease-in-out infinite;
+    }
+    
+    .delay-100 { animation-delay: 0.1s; opacity: 0; }
+    .delay-200 { animation-delay: 0.2s; opacity: 0; }
+    .delay-300 { animation-delay: 0.3s; opacity: 0; }
+    .delay-400 { animation-delay: 0.4s; opacity: 0; }
+    .delay-500 { animation-delay: 0.5s; opacity: 0; }
+    .delay-600 { animation-delay: 0.6s; opacity: 0; }
+    
+    .card-hover {
+      transition: all 0.3s ease;
+    }
+    
+    .card-hover:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(255,115,0,0.2);
+    }
+  </style>
+</head>
+
+<body class="text-white">
+
+<!-- NAVBAR -->
+<nav class="fixed w-full z-50 bg-black/70 backdrop-blur-md border-b border-gray-800 animate-fadeIn">
+  <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+    <h1 class="text-xl font-bold text-orange-500">Frame2Brand</h1>
+    <div class="space-x-6 hidden md:flex text-sm text-gray-300">
+      <a href="index.html" class="text-orange-400 font-semibold">Home</a>
+      <a href="services.html" class="hover:text-orange-400 transition">Services</a>
+      <a href="pricing.html" class="hover:text-orange-400 transition">Pricing</a>
+      <a href="testimonials.html" class="hover:text-orange-400 transition">Testimonials</a>
+    </div>
+    <button class="bg-orange-500 hover:bg-orange-600 px-5 py-2 rounded-lg font-medium transition">
+      Get Started
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="min-h-screen flex items-center justify-center text-center gradient-bg px-6">
+  <div class="max-w-4xl">
+    <h1 class="text-5xl md:text-7xl font-extrabold leading-tight animate-fadeInUp">
+      Raw footage becomes
+      <span class="text-orange-500">brand intelligence</span>
+    </h1>
+    <p class="mt-6 text-gray-400 text-lg max-w-2xl mx-auto animate-fadeInUp delay-200">
+      We don't just edit videos. We apply marketing psychology to turn your content into
+      customer magnets — without agency pricing.
+    </p>
+    <div class="mt-8 flex justify-center gap-6 animate-fadeInUp delay-400">
+      <button class="bg-orange-500 px-8 py-3 rounded-xl font-semibold orange-glow hover:scale-105 transition">
+        Start Building Your Brand →
+      </button>
+      <button class="border border-orange-500 text-orange-500 px-8 py-3 rounded-xl hover:bg-orange-500 hover:text-white transition">
+        See The Method
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- METHOD -->
+<section class="py-24 px-6 text-center">
+  <h2 class="text-4xl font-bold mb-4 animate-fadeInUp">How We Think Different</h2>
+  <p class="text-gray-400 mb-12 animate-fadeInUp delay-100">This isn't video editing. It's brand intelligence applied to content creation.</p>
+
+  <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+    <div class="bg-gray-900 p-8 rounded-2xl border border-gray-800 hover:border-orange-500 card-hover animate-fadeInUp delay-200">
+      <h3 class="text-xl font-semibold mb-3">CAPTURE</h3>
+      <p class="text-gray-400">We analyze your raw footage for brand story potential — not just visual appeal.</p>
+    </div>
+    <div class="bg-gray-900 p-8 rounded-2xl border border-gray-800 hover:border-orange-500 card-hover animate-fadeInUp delay-300">
+      <h3 class="text-xl font-semibold mb-3">STRATEGIZE</h3>
+      <p class="text-gray-400">We map trending formats to your business goals. Every edit serves positioning.</p>
+    </div>
+    <div class="bg-gray-900 p-8 rounded-2xl border border-gray-800 hover:border-orange-500 card-hover animate-fadeInUp delay-400">
+      <h3 class="text-xl font-semibold mb-3">TRANSFORM</h3>
+      <p class="text-gray-400">We deliver reels that work like micro-advertisements — not just pretty videos.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STRATEGIC DIFFERENCE -->
+<section class="py-24 bg-black text-center px-6">
+  <h2 class="text-4xl font-bold mb-12 animate-fadeInUp">The Strategic Difference</h2>
+
+  <div class="grid md:grid-cols-4 gap-6 max-w-6xl mx-auto">
+    <div class="bg-gray-900 p-6 rounded-xl border border-gray-800 card-hover animate-scaleIn delay-100">
+      <h4 class="font-semibold text-lg mb-2 text-orange-500">Trend Intelligence</h4>
+      <p class="text-gray-400 text-sm">We adapt viral formats to business context — not copy blindly.</p>
+    </div>
+    <div class="bg-gray-900 p-6 rounded-xl border border-gray-800 card-hover animate-scaleIn delay-200">
+      <h4 class="font-semibold text-lg mb-2 text-orange-500">Hook Psychology</h4>
+      <p class="text-gray-400 text-sm">We engineer openings that trigger emotional response.</p>
+    </div>
+    <div class="bg-gray-900 p-6 rounded-xl border border-gray-800 card-hover animate-scaleIn delay-300">
+      <h4 class="font-semibold text-lg mb-2 text-orange-500">Brand Positioning</h4>
+      <p class="text-gray-400 text-sm">Every reel reinforces your market presence.</p>
+    </div>
+    <div class="bg-gray-900 p-6 rounded-xl border border-gray-800 card-hover animate-scaleIn delay-400">
+      <h4 class="font-semibold text-lg mb-2 text-orange-500">Conversion Architecture</h4>
+      <p class="text-gray-400 text-sm">We structure content from awareness → interest → action.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-24 text-center gradient-bg">
+  <h2 class="text-4xl font-bold mb-6 animate-fadeInUp">Marketing Intelligence in Every Frame</h2>
+  <button class="bg-orange-500 px-10 py-4 rounded-2xl text-lg font-semibold orange-glow animate-pulse">
+    Begin Brand Transformation
+  </button>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-black border-t border-gray-800 py-10 text-center text-gray-500">
+  <p>© 2026 Frame2Brand. Video strategy without agency overhead.</p>
+</footer>
+
+</body>
+</html>
