@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Frame2Brand - Services</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0b0b0c;
+    }
+    .orange-glow {
+      box-shadow: 0 0 40px rgba(255,115,0,0.3);
+    }
+    .gradient-bg {
+      background: radial-gradient(circle at top left, rgba(255,115,0,0.15), transparent 40%),
+                  radial-gradient(circle at bottom right, rgba(255,115,0,0.1), transparent 40%);
+    }
+    
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    @keyframes scaleIn {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    
+    .animate-fadeInUp {
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+    
+    .animate-fadeIn {
+      animation: fadeIn 1s ease-out forwards;
+    }
+    
+    .animate-slideInLeft {
+      animation: slideInLeft 0.8s ease-out forwards;
+    }
+    
+    .animate-slideInRight {
+      animation: slideInRight 0.8s ease-out forwards;
+    }
+    
+    .animate-scaleIn {
+      animation: scaleIn 0.6s ease-out forwards;
+    }
+    
+    .delay-100 { animation-delay: 0.1s; opacity: 0; }
+    .delay-200 { animation-delay: 0.2s; opacity: 0; }
+    .delay-300 { animation-delay: 0.3s; opacity: 0; }
+    .delay-400 { animation-delay: 0.4s; opacity: 0; }
+    .delay-500 { animation-delay: 0.5s; opacity: 0; }
+    .delay-600 { animation-delay: 0.6s; opacity: 0; }
+    
+    .card-hover {
+      transition: all 0.3s ease;
+    }
+    
+    .card-hover:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(255,115,0,0.2);
+    }
+  </style>
+</head>
+
+<body class="text-white">
+
+<!-- NAVBAR -->
+<nav class="fixed w-full z-50 bg-black/70 backdrop-blur-md border-b border-gray-800 animate-fadeIn">
+  <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+    <h1 class="text-xl font-bold text-orange-500">Frame2Brand</h1>
+    <div class="space-x-6 hidden md:flex text-sm text-gray-300">
+      <a href="index.html" class="hover:text-orange-400 transition">Home</a>
+      <a href="services.html" class="text-orange-400 font-semibold">Services</a>
+      <a href="pricing.html" class="hover:text-orange-400 transition">Pricing</a>
+      <a href="testimonials.html" class="hover:text-orange-400 transition">Testimonials</a>
+    </div>
+    <button class="bg-orange-500 hover:bg-orange-600 px-5 py-2 rounded-lg font-medium transition">
+      Get Started
+    </button>
+  </div>
+</nav>
+
+<!-- HERO SECTION -->
+<section class="min-h-[60vh] flex items-center justify-center text-center gradient-bg px-6 pt-24">
+  <div class="max-w-4xl">
+    <h1 class="text-5xl md:text-6xl font-extrabold leading-tight animate-fadeInUp">
+      Our <span class="text-orange-500">Services</span>
+    </h1>
+    <p class="mt-6 text-gray-400 text-lg max-w-2xl mx-auto animate-fadeInUp delay-200">
+      Strategic video solutions designed to transform your brand presence
+    </p>
+  </div>
+</section>
+
+<!-- SERVICES GRID -->
+<section class="py-24 px-6">
+  <div class="max-w-6xl mx-auto">
+    
+    <!-- Service 1 -->
+    <div class="mb-16 grid md:grid-cols-2 gap-12 items-center">
+      <div class="animate-slideInLeft">
+        <div class="bg-gradient-to-br from-orange-500/20 to-transparent p-8 rounded-2xl border border-orange-500/30">
+          <div class="text-6xl mb-4">🎬</div>
+          <h3 class="text-3xl font-bold mb-4">Brand Reel Creation</h3>
+          <p class="text-gray-400 mb-6">
+            Transform your raw footage into compelling brand stories that resonate with your audience. 
+            We analyze every frame for maximum impact and engagement.
+          </p>
+          <ul class="space-y-3 text-gray-300">
+            <li class="flex items-start">
+              <span class="text-orange-500 mr-2">✓</span>
+              <span>Strategic content planning</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-orange-500 mr-2">✓</span>
+              <span>Professional editing & color grading</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-orange-500 mr-2">✓</span>
+              <span>Platform-optimized formats</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-orange-500 mr-2">✓</span>
+              <span>Unlimited revisions</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="animate-slideInRight">
+        <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=600&h=400&fit=crop" 
+             alt="Video Production" 
+             class="rounded-2xl shadow-2xl w-full h-auto">
+      </div>
+    </div>
+
+    <!-- Service 2 -->
+    <div class="mb-16 grid md:grid-cols-2 gap-12 items-center">
+      <div class="animate-slideInLeft order-2 md:order-1">
+        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop" 
+             alt="Marketing Strategy" 
+             class="rounded-2xl shadow-2xl w-full h-auto">
+      </div>
+      <div class="animate-slideInRight order-1 md:order-2">
+        <div class="bg-gradient-to-br from-orange-500/20 to-transparent p-8 rounded-2xl border border-orange-500/30">
+          <div class="text-6xl mb-4">📊</div>
+          <h3 class="text-3xl font-bold mb-4">Marketing Psychology Integration</h3>
+          <p class="text-gray-400 mb-6">
+            Every video is crafted with proven marketing principles. We don't just make content look good—we make it convert.
+          </p>
+          <ul class="space-y-3 text-gray-300">
+            <li class="flex items-start">
+              <span class="text-orange-500 mr-2">✓</span>
+              <span>Hook engineering for maximum retention</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-orange-500 mr-2">✓</span>
+              <span>Emotional trigger mapping</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-orange-500 mr-2">✓</span>
+              <span>Call-to-action optimization</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-orange-500 mr-2">✓</span>
+              <span>Conversion-focused storytelling</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Service 3 -->
+    <div class="mb-16 grid md:grid-cols-2 gap-12 items-center">
+      <div class="animate-slideInLeft">
+        <div class="bg-gradient-to-br from-orange-500/20 to-transparent p-8 rounded-2xl border border-orange-500/30">
+          <div class="text-6xl mb-4">🔥</div>
+          <h3 class="text-3xl font-bold mb-4">Trend Analysis & Adaptation</h3>
+          <p class="text-gray-400 mb-6">
+            Stay ahead of the curve with our trend intelligence. We identify viral formats and adapt them to your brand identity.
+          </p>
+          <ul class="space-y-3 text-gray-300">
+            <li class="flex items-start">
+              <span class="text-orange-500 mr-2">✓</span>
+              <span>Real-time trend monitoring</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-orange-500 mr-2">✓</span>
+              <span>Format adaptation for your niche</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-orange-500 mr-2">✓</span>
+              <span>Competitive analysis</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-orange-500 mr-2">✓</span>
+              <span>Platform-specific strategies</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="animate-slideInRight">
+        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop" 
+             alt="Analytics" 
+             class="rounded-2xl shadow-2xl w-full h-auto">
+      </div>
+    </div>
+
+    <!-- Service 4 -->
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div class="animate-slideInLeft order-2 md:order-1">
+        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&h=400&fit=crop" 
+             alt="Content Library" 
+             class="rounded-2xl shadow-2xl w-full h-auto">
+      </div>
+      <div class="animate-slideInRight order-1 md:order-2">
+        <div class="bg-gradient-to-br from-orange-500/20 to-transparent p-8 rounded-2xl border border-orange-500/30">
+          <div class="text-6xl mb-4">📚</div>
+          <h3 class="text-3xl font-bold mb-4">Content Library Transformation</h3>
+          <p class="text-gray-400 mb-6">
+            Already have content? We'll audit and optimize your existing video library to align with your brand strategy.
+          </p>
+          <ul class="space-y-3 text-gray-300">
+            <li class="flex items-start">
+              <span class="text-orange-500 mr-2">✓</span>
+              <span>Complete content audit</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-orange-500 mr-2">✓</span>
+              <span>Re-editing for brand consistency</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-orange-500 mr-2">✓</span>
+              <span>Hook & CTA optimization</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-orange-500 mr-2">✓</span>
+              <span>Repurposing strategy</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-24 text-center gradient-bg">
+  <h2 class="text-4xl font-bold mb-6 animate-fadeInUp">Ready to Transform Your Content?</h2>
+  <p class="text-gray-400 mb-8 animate-fadeInUp delay-100">Let's discuss how our services can elevate your brand</p>
+  <button class="bg-orange-500 px-10 py-4 rounded-2xl text-lg font-semibold orange-glow hover:scale-105 transition animate-fadeInUp delay-200">
+    Schedule a Consultation
+  </button>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-black border-t border-gray-800 py-10 text-center text-gray-500">
+  <p>© 2026 Frame2Brand. Video strategy without agency overhead.</p>
+</footer>
+
+</body>
+</html>

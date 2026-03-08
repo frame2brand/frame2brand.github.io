@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Frame2Brand</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0b0b0c;
+    }
+    .orange-glow {
+      box-shadow: 0 0 40px rgba(255,115,0,0.3);
+    }
+    .gradient-bg {
+      background: radial-gradient(circle at top left, rgba(255,115,0,0.15), transparent 40%),
+                  radial-gradient(circle at bottom right, rgba(255,115,0,0.1), transparent 40%);
+    }
+  </style>
+</head>
+
+<body class="text-white">
+
+<!-- NAVBAR -->
+<nav class="fixed w-full z-50 bg-black/70 backdrop-blur-md border-b border-gray-800">
+  <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+    <h1 class="text-xl font-bold text-orange-500">Frame2Brand</h1>
+    <div class="space-x-6 hidden md:flex text-sm text-gray-300">
+      <a href="#method" class="hover:text-orange-400">Method</a>
+      <a href="#services" class="hover:text-orange-400">Services</a>
+      <a href="#pricing" class="hover:text-orange-400">Pricing</a>
+      <a href="#testimonials" class="hover:text-orange-400">Testimonials</a>
+    </div>
+    <button class="bg-orange-500 hover:bg-orange-600 px-5 py-2 rounded-lg font-medium">
+      Get Started
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="min-h-screen flex items-center justify-center text-center gradient-bg px-6">
+  <div class="max-w-4xl">
+    <h1 class="text-5xl md:text-7xl font-extrabold leading-tight">
+      Raw footage becomes
+      <span class="text-orange-500">brand intelligence</span>
+    </h1>
+    <p class="mt-6 text-gray-400 text-lg max-w-2xl mx-auto">
+      We don't just edit videos. We apply marketing psychology to turn your content into
+      customer magnets — without agency pricing.
+    </p>
+    <div class="mt-8 flex justify-center gap-6">
+      <button class="bg-orange-500 px-8 py-3 rounded-xl font-semibold orange-glow">
+        Start Building Your Brand →
+      </button>
+      <button class="border border-orange-500 text-orange-500 px-8 py-3 rounded-xl">
+        See The Method
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- METHOD -->
+<section id="method" class="py-24 px-6 text-center">
+  <h2 class="text-4xl font-bold mb-4">How We Think Different</h2>
+  <p class="text-gray-400 mb-12">This isn't video editing. It's brand intelligence applied to content creation.</p>
+
+  <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+    <div class="bg-gray-900 p-8 rounded-2xl border border-gray-800 hover:border-orange-500 transition">
+      <h3 class="text-xl font-semibold mb-3">CAPTURE</h3>
+      <p class="text-gray-400">We analyze your raw footage for brand story potential — not just visual appeal.</p>
+    </div>
+    <div class="bg-gray-900 p-8 rounded-2xl border border-gray-800 hover:border-orange-500 transition">
+      <h3 class="text-xl font-semibold mb-3">STRATEGIZE</h3>
+      <p class="text-gray-400">We map trending formats to your business goals. Every edit serves positioning.</p>
+    </div>
+    <div class="bg-gray-900 p-8 rounded-2xl border border-gray-800 hover:border-orange-500 transition">
+      <h3 class="text-xl font-semibold mb-3">TRANSFORM</h3>
+      <p class="text-gray-400">We deliver reels that work like micro-advertisements — not just pretty videos.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STRATEGIC DIFFERENCE -->
+<section class="py-24 bg-black text-center px-6">
+  <h2 class="text-4xl font-bold mb-12">The Strategic Difference</h2>
+
+  <div class="grid md:grid-cols-4 gap-6 max-w-6xl mx-auto">
+    <div class="bg-gray-900 p-6 rounded-xl border border-gray-800">
+      <h4 class="font-semibold text-lg mb-2 text-orange-500">Trend Intelligence</h4>
+      <p class="text-gray-400 text-sm">We adapt viral formats to business context — not copy blindly.</p>
+    </div>
+    <div class="bg-gray-900 p-6 rounded-xl border border-gray-800">
+      <h4 class="font-semibold text-lg mb-2 text-orange-500">Hook Psychology</h4>
+      <p class="text-gray-400 text-sm">We engineer openings that trigger emotional response.</p>
+    </div>
+    <div class="bg-gray-900 p-6 rounded-xl border border-gray-800">
+      <h4 class="font-semibold text-lg mb-2 text-orange-500">Brand Positioning</h4>
+      <p class="text-gray-400 text-sm">Every reel reinforces your market presence.</p>
+    </div>
+    <div class="bg-gray-900 p-6 rounded-xl border border-gray-800">
+      <h4 class="font-semibold text-lg mb-2 text-orange-500">Conversion Architecture</h4>
+      <p class="text-gray-400 text-sm">We structure content from awareness → interest → action.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" class="py-24 px-6 text-center gradient-bg">
+  <h2 class="text-4xl font-bold mb-12">Partnership Models</h2>
+
+  <div class="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+
+    <!-- Monthly Plan -->
+    <div class="bg-gray-900 p-10 rounded-2xl border-2 border-orange-500 orange-glow">
+      <h3 class="text-2xl font-bold mb-4">Monthly Brand Reel Program</h3>
+      <p class="text-4xl font-extrabold text-orange-500 mb-6">₹3,000 <span class="text-sm text-gray-400">/month</span></p>
+      <ul class="text-gray-400 space-y-3 mb-8">
+        <li>✔ 12 strategically crafted reels</li>
+        <li>✔ Trend analysis & adaptation</li>
+        <li>✔ Brand consistency framework</li>
+        <li>✔ Unlimited revisions</li>
+      </ul>
+      <button class="bg-orange-500 px-6 py-3 rounded-xl font-semibold">
+        Get Started Now
+      </button>
+    </div>
+
+    <!-- Custom Plan -->
+    <div class="bg-gray-900 p-10 rounded-2xl border border-gray-800">
+      <h3 class="text-2xl font-bold mb-4">Content Library Transformation</h3>
+      <p class="text-3xl font-bold text-orange-500 mb-6">Custom</p>
+      <ul class="text-gray-400 space-y-3 mb-8">
+        <li>✔ Existing video audit</li>
+        <li>✔ Hook & CTA optimization</li>
+        <li>✔ Brand alignment restructuring</li>
+      </ul>
+      <button class="border border-orange-500 text-orange-500 px-6 py-3 rounded-xl">
+        Learn More
+      </button>
+    </div>
+
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section class="py-24 px-6 bg-black text-center">
+  <h2 class="text-4xl font-bold mb-12">Frame2Brand vs Traditional Agencies</h2>
+
+  <div class="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto text-left">
+    <div class="bg-gray-900 p-8 rounded-xl border border-red-500">
+      <h3 class="text-xl font-bold text-red-400 mb-4">Traditional Agency</h3>
+      <ul class="text-gray-400 space-y-2">
+        <li>₹15,000+ per month</li>
+        <li>Long-term contracts</li>
+        <li>Basic posting only</li>
+        <li>No strategy included</li>
+      </ul>
+    </div>
+    <div class="bg-gray-900 p-8 rounded-xl border border-orange-500">
+      <h3 class="text-xl font-bold text-orange-500 mb-4">Frame2Brand</h3>
+      <ul class="text-gray-400 space-y-2">
+        <li>₹3,000 per month</li>
+        <li>Cancel anytime</li>
+        <li>12 strategic reels</li>
+        <li>Marketing psychology applied</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-24 text-center gradient-bg">
+  <h2 class="text-4xl font-bold mb-6">Marketing Intelligence in Every Frame</h2>
+  <button class="bg-orange-500 px-10 py-4 rounded-2xl text-lg font-semibold orange-glow">
+    Begin Brand Transformation
+  </button>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-black border-t border-gray-800 py-10 text-center text-gray-500">
+  <p>© 2026 Frame2Brand. Video strategy without agency overhead.</p>
+</footer>
+
+</body>
+</html>

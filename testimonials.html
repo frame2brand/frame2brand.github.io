@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Frame2Brand - Testimonials</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0b0b0c;
+    }
+    .orange-glow {
+      box-shadow: 0 0 40px rgba(255,115,0,0.3);
+    }
+    .gradient-bg {
+      background: radial-gradient(circle at top left, rgba(255,115,0,0.15), transparent 40%),
+                  radial-gradient(circle at bottom right, rgba(255,115,0,0.1), transparent 40%);
+    }
+    
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    @keyframes scaleIn {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    
+    .animate-fadeInUp {
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+    
+    .animate-fadeIn {
+      animation: fadeIn 1s ease-out forwards;
+    }
+    
+    .animate-slideInLeft {
+      animation: slideInLeft 0.8s ease-out forwards;
+    }
+    
+    .animate-slideInRight {
+      animation: slideInRight 0.8s ease-out forwards;
+    }
+    
+    .animate-scaleIn {
+      animation: scaleIn 0.6s ease-out forwards;
+    }
+    
+    .delay-100 { animation-delay: 0.1s; opacity: 0; }
+    .delay-200 { animation-delay: 0.2s; opacity: 0; }
+    .delay-300 { animation-delay: 0.3s; opacity: 0; }
+    .delay-400 { animation-delay: 0.4s; opacity: 0; }
+    .delay-500 { animation-delay: 0.5s; opacity: 0; }
+    .delay-600 { animation-delay: 0.6s; opacity: 0; }
+    .delay-700 { animation-delay: 0.7s; opacity: 0; }
+    .delay-800 { animation-delay: 0.8s; opacity: 0; }
+    
+    .card-hover {
+      transition: all 0.3s ease;
+    }
+    
+    .card-hover:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(255,115,0,0.2);
+    }
+    
+    .star-rating {
+      color: #ff7300;
+    }
+  </style>
+</head>
+
+<body class="text-white">
+
+<!-- NAVBAR -->
+<nav class="fixed w-full z-50 bg-black/70 backdrop-blur-md border-b border-gray-800 animate-fadeIn">
+  <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+    <h1 class="text-xl font-bold text-orange-500">Frame2Brand</h1>
+    <div class="space-x-6 hidden md:flex text-sm text-gray-300">
+      <a href="index.html" class="hover:text-orange-400 transition">Home</a>
+      <a href="services.html" class="hover:text-orange-400 transition">Services</a>
+      <a href="pricing.html" class="hover:text-orange-400 transition">Pricing</a>
+      <a href="testimonials.html" class="text-orange-400 font-semibold">Testimonials</a>
+    </div>
+    <button class="bg-orange-500 hover:bg-orange-600 px-5 py-2 rounded-lg font-medium transition">
+      Get Started
+    </button>
+  </div>
+</nav>
+
+<!-- HERO SECTION -->
+<section class="min-h-[60vh] flex items-center justify-center text-center gradient-bg px-6 pt-24">
+  <div class="max-w-4xl">
+    <h1 class="text-5xl md:text-6xl font-extrabold leading-tight animate-fadeInUp">
+      What Our <span class="text-orange-500">Clients Say</span>
+    </h1>
+    <p class="mt-6 text-gray-400 text-lg max-w-2xl mx-auto animate-fadeInUp delay-200">
+      Real results from brands that transformed their content strategy
+    </p>
+  </div>
+</section>
+
+<!-- TESTIMONIALS GRID -->
+<section class="py-24 px-6">
+  <div class="max-w-6xl mx-auto">
+    
+    <div class="grid md:grid-cols-3 gap-8 mb-16">
+      
+      <!-- Testimonial 1 -->
+      <div class="bg-gray-900 p-8 rounded-2xl border border-gray-800 card-hover animate-scaleIn delay-100">
+        <div class="star-rating mb-4 text-xl">★★★★★</div>
+        <p class="text-gray-300 mb-6 italic">
+          "Frame2Brand completely transformed our social media presence. Their understanding of marketing psychology is evident in every reel they create. Our engagement increased by 300% in just two months!"
+        </p>
+        <div class="flex items-center">
+          <div class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center font-bold text-lg mr-4">
+            PS
+          </div>
+          <div>
+            <h4 class="font-semibold">Priya Sharma</h4>
+            <p class="text-gray-400 text-sm">Founder, StyleHub Fashion</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial 2 -->
+      <div class="bg-gray-900 p-8 rounded-2xl border border-gray-800 card-hover animate-scaleIn delay-200">
+        <div class="star-rating mb-4 text-xl">★★★★★</div>
+        <p class="text-gray-300 mb-6 italic">
+          "The difference between Frame2Brand and traditional agencies is night and day. They don't just edit videos—they craft strategic content that actually converts. Best investment we've made."
+        </p>
+        <div class="flex items-center">
+          <div class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center font-bold text-lg mr-4">
+            RK
+          </div>
+          <div>
+            <h4 class="font-semibold">Rahul Kumar</h4>
+            <p class="text-gray-400 text-sm">CEO, TechStart Solutions</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial 3 -->
+      <div class="bg-gray-900 p-8 rounded-2xl border border-gray-800 card-hover animate-scaleIn delay-300">
+        <div class="star-rating mb-4 text-xl">★★★★★</div>
+        <p class="text-gray-300 mb-6 italic">
+          "I was skeptical about the pricing at first, but the quality and strategy behind each reel is incredible. They've helped us build a consistent brand identity across all platforms."
+        </p>
+        <div class="flex items-center">
+          <div class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center font-bold text-lg mr-4">
+            AM
+          </div>
+          <div>
+            <h4 class="font-semibold">Anita Mehta</h4>
+            <p class="text-gray-400 text-sm">Marketing Director, FitLife Wellness</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Second Row -->
+    <div class="grid md:grid-cols-3 gap-8 mb-16">
+      
+      <!-- Testimonial 4 -->
+      <div class="bg-gray-900 p-8 rounded-2xl border border-gray-800 card-hover animate-scaleIn delay-400">
+        <div class="star-rating mb-4 text-xl">★★★★★</div>
+        <p class="text-gray-300 mb-6 italic">
+          "Their trend analysis is spot-on. They know exactly which formats work for our industry and adapt them perfectly to our brand voice. Our follower count doubled in 3 months."
+        </p>
+        <div class="flex items-center">
+          <div class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center font-bold text-lg mr-4">
+            VG
+          </div>
+          <div>
+            <h4 class="font-semibold">Vikram Gupta</h4>
+            <p class="text-gray-400 text-sm">Owner, Urban Eats Restaurant</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial 5 -->
+      <div class="bg-gray-900 p-8 rounded-2xl border border-gray-800 card-hover animate-scaleIn delay-500">
+        <div class="star-rating mb-4 text-xl">★★★★★</div>
+        <p class="text-gray-300 mb-6 italic">
+          "Finally, a service that understands the difference between pretty videos and videos that sell. Every reel drives traffic to our website. The ROI is unmatched."
+        </p>
+        <div class="flex items-center">
+          <div class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center font-bold text-lg mr-4">
+            SN
+          </div>
+          <div>
+            <h4 class="font-semibold">Sneha Nair</h4>
+            <p class="text-gray-400 text-sm">Founder, Artisan Crafts Co.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial 6 -->
+      <div class="bg-gray-900 p-8 rounded-2xl border border-gray-800 card-hover animate-scaleIn delay-600">
+        <div class="star-rating mb-4 text-xl">★★★★★</div>
+        <p class="text-gray-300 mb-6 italic">
+          "The unlimited revisions policy shows they truly care about getting it right. They work with us until every detail aligns with our vision. Exceptional service!"
+        </p>
+        <div class="flex items-center">
+          <div class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center font-bold text-lg mr-4">
+            AJ
+          </div>
+          <div>
+            <h4 class="font-semibold">Arjun Joshi</h4>
+            <p class="text-gray-400 text-sm">Creative Director, PixelPerfect Studio</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- STATS SECTION -->
+<section class="py-24 bg-black px-6">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-4xl font-bold mb-12 text-center animate-fadeInUp">Results That Speak</h2>
+    
+    <div class="grid md:grid-cols-4 gap-8">
+      <div class="text-center animate-fadeInUp delay-100">
+        <div class="text-5xl font-extrabold text-orange-500 mb-2">250+</div>
+        <p class="text-gray-400">Happy Clients</p>
+      </div>
+      <div class="text-center animate-fadeInUp delay-200">
+        <div class="text-5xl font-extrabold text-orange-500 mb-2">3000+</div>
+        <p class="text-gray-400">Reels Created</p>
+      </div>
+      <div class="text-center animate-fadeInUp delay-300">
+        <div class="text-5xl font-extrabold text-orange-500 mb-2">300%</div>
+        <p class="text-gray-400">Avg. Engagement Increase</p>
+      </div>
+      <div class="text-center animate-fadeInUp delay-400">
+        <div class="text-5xl font-extrabold text-orange-500 mb-2">98%</div>
+        <p class="text-gray-400">Client Satisfaction</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO TESTIMONIAL SECTION -->
+<section class="py-24 px-6 gradient-bg">
+  <div class="max-w-4xl mx-auto text-center">
+    <h2 class="text-4xl font-bold mb-6 animate-fadeInUp">See The Transformation</h2>
+    <p class="text-gray-400 mb-12 animate-fadeInUp delay-100">Watch how we've helped brands elevate their content game</p>
+    
+    <div class="bg-gray-900 p-4 rounded-2xl border border-gray-800 animate-scaleIn delay-200">
+      <div class="aspect-video bg-gray-800 rounded-xl flex items-center justify-center">
+        <div class="text-center">
+          <div class="w-20 h-20 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+          </div>
+          <p class="text-gray-400">Video Testimonial Coming Soon</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-24 text-center">
+  <h2 class="text-4xl font-bold mb-6 animate-fadeInUp">Join Our Success Stories</h2>
+  <p class="text-gray-400 mb-8 animate-fadeInUp delay-100">Start your brand transformation today</p>
+  <button class="bg-orange-500 px-10 py-4 rounded-2xl text-lg font-semibold orange-glow hover:scale-105 transition animate-fadeInUp delay-200">
+    Get Started Now
+  </button>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-black border-t border-gray-800 py-10 text-center text-gray-500">
+  <p>© 2026 Frame2Brand. Video strategy without agency overhead.</p>
+</footer>
+
+</body>
+</html>
