@@ -2,325 +2,458 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Frame2Brand - Testimonials</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Testimonials — Frame2Brand</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
   <style>
+    :root {
+      --bg: #080808;
+      --surface: #111111;
+      --surface2: #191919;
+      --border: #222222;
+      --accent: #c8ff00;
+      --accent2: #ff6b35;
+      --text: #f0f0f0;
+      --muted: #666666;
+      --card-bg: #0f0f0f;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
-      font-family: 'Inter', sans-serif;
-      background-color: #0b0b0c;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
     }
-    .orange-glow {
-      box-shadow: 0 0 40px rgba(255,115,0,0.3);
+
+    /* ── HEADER ── */
+    header {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 48px;
+      background: rgba(8,8,8,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
     }
-    .gradient-bg {
-      background: radial-gradient(circle at top left, rgba(255,115,0,0.15), transparent 40%),
-                  radial-gradient(circle at bottom right, rgba(255,115,0,0.1), transparent 40%);
+    .logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.6rem; letter-spacing: 2px;
+      color: var(--accent); text-decoration: none;
     }
-    
-    /* Animations */
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    nav a {
+      color: var(--muted); text-decoration: none;
+      font-size: .85rem; letter-spacing: .08em; text-transform: uppercase;
+      margin-left: 32px;
+      transition: color .2s;
     }
-    
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+    nav a:hover, nav a.active { color: var(--text); }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 100px 48px 60px;
+      max-width: 1100px; margin: 0 auto;
     }
-    
-    @keyframes slideInLeft {
-      from {
-        opacity: 0;
-        transform: translateX(-50px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
+    .hero-label {
+      font-family: 'DM Mono', monospace;
+      font-size: .7rem; letter-spacing: .25em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 16px;
     }
-    
-    @keyframes slideInRight {
-      from {
-        opacity: 0;
-        transform: translateX(50px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
+    .hero h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3.5rem, 9vw, 7rem);
+      line-height: .92; letter-spacing: 2px;
+      color: var(--text);
     }
-    
-    @keyframes scaleIn {
-      from {
-        opacity: 0;
-        transform: scale(0.9);
-      }
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
+    .hero h1 span { color: var(--accent); }
+    .hero p {
+      max-width: 500px; color: var(--muted);
+      font-size: 1rem; margin-top: 20px; font-weight: 300;
     }
-    
-    .animate-fadeInUp {
-      animation: fadeInUp 0.8s ease-out forwards;
+
+    /* ── SECTION WRAPPER ── */
+    section { max-width: 1100px; margin: 0 auto; padding: 0 48px 80px; }
+
+    /* ── STATS BAR ── */
+    .stats {
+      display: flex; gap: 0;
+      border: 1px solid var(--border);
+      border-radius: 4px; overflow: hidden;
+      margin-bottom: 80px;
     }
-    
-    .animate-fadeIn {
-      animation: fadeIn 1s ease-out forwards;
+    .stat {
+      flex: 1; padding: 28px 32px;
+      border-right: 1px solid var(--border);
+      background: var(--surface);
     }
-    
-    .animate-slideInLeft {
-      animation: slideInLeft 0.8s ease-out forwards;
+    .stat:last-child { border-right: none; }
+    .stat-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.6rem; color: var(--accent); line-height: 1;
     }
-    
-    .animate-slideInRight {
-      animation: slideInRight 0.8s ease-out forwards;
+    .stat-label {
+      font-size: .78rem; color: var(--muted);
+      text-transform: uppercase; letter-spacing: .1em; margin-top: 4px;
     }
-    
-    .animate-scaleIn {
-      animation: scaleIn 0.6s ease-out forwards;
+
+    /* ── GRID ── */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 4px; overflow: hidden;
+      margin-bottom: 80px;
     }
-    
-    .delay-100 { animation-delay: 0.1s; opacity: 0; }
-    .delay-200 { animation-delay: 0.2s; opacity: 0; }
-    .delay-300 { animation-delay: 0.3s; opacity: 0; }
-    .delay-400 { animation-delay: 0.4s; opacity: 0; }
-    .delay-500 { animation-delay: 0.5s; opacity: 0; }
-    .delay-600 { animation-delay: 0.6s; opacity: 0; }
-    .delay-700 { animation-delay: 0.7s; opacity: 0; }
-    .delay-800 { animation-delay: 0.8s; opacity: 0; }
-    
-    .card-hover {
-      transition: all 0.3s ease;
+    .t-card {
+      background: var(--card-bg);
+      padding: 36px 32px;
+      position: relative;
+      transition: background .3s;
+      animation: fadeUp .5s ease both;
     }
-    
-    .card-hover:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 20px 40px rgba(255,115,0,0.2);
+    .t-card:hover { background: var(--surface2); }
+    @keyframes fadeUp {
+      from { opacity:0; transform: translateY(20px); }
+      to   { opacity:1; transform: translateY(0); }
     }
-    
-    .star-rating {
-      color: #ff7300;
+
+    .t-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 20px; }
+    .t-avatar {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: var(--accent);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.3rem; color: #000; flex-shrink: 0;
+    }
+    .t-avatar.c2 { background: var(--accent2); color:#fff; }
+    .t-avatar.c3 { background: #8b5cf6; color:#fff; }
+    .t-avatar.c4 { background: #06b6d4; color:#000; }
+
+    .stars { color: var(--accent); font-size: .9rem; letter-spacing: 2px; }
+    .t-quote {
+      font-size: .95rem; color: #ccc; font-weight: 300;
+      line-height: 1.7; margin-bottom: 24px;
+      border-left: 2px solid var(--border);
+      padding-left: 16px;
+    }
+    .t-name {
+      font-family: 'DM Mono', monospace;
+      font-size: .8rem; font-weight: 500;
+      color: var(--text); letter-spacing: .05em;
+    }
+    .t-role { font-size: .75rem; color: var(--muted); margin-top: 2px; }
+
+    .t-badge {
+      position: absolute; top: 20px; right: 20px;
+      font-family: 'DM Mono', monospace;
+      font-size: .6rem; text-transform: uppercase; letter-spacing: .15em;
+      background: var(--accent); color: #000;
+      padding: 3px 8px; border-radius: 2px;
+    }
+    .t-badge.new { background: var(--accent2); color:#fff; }
+
+    /* ── EMPTY STATE ── */
+    .empty-state {
+      grid-column: 1 / -1;
+      padding: 80px 32px; text-align: center;
+    }
+    .empty-state p { color: var(--muted); font-size: .9rem; }
+
+    /* ── FORM ── */
+    .form-wrapper {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px; overflow: hidden;
+    }
+    .form-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 24px 36px;
+      border-bottom: 1px solid var(--border);
+    }
+    .form-header h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.8rem; letter-spacing: 1px;
+    }
+    .form-header span {
+      font-family: 'DM Mono', monospace;
+      font-size: .65rem; color: var(--muted);
+      text-transform: uppercase; letter-spacing: .15em;
+    }
+    form { padding: 36px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+    .field { display: flex; flex-direction: column; gap: 8px; }
+    .field.full { grid-column: 1 / -1; }
+    label {
+      font-family: 'DM Mono', monospace;
+      font-size: .7rem; text-transform: uppercase;
+      letter-spacing: .15em; color: var(--muted);
+    }
+    input, textarea {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: .9rem;
+      padding: 12px 16px;
+      outline: none;
+      transition: border-color .2s, background .2s;
+      width: 100%;
+    }
+    input:focus, textarea:focus {
+      border-color: var(--accent);
+      background: #111;
+    }
+    textarea { resize: vertical; min-height: 110px; }
+
+    /* Star picker */
+    .star-picker { display: flex; flex-direction: row-reverse; gap: 4px; }
+    .star-picker input[type="radio"] { display: none; }
+    .star-picker label.star-lbl {
+      font-size: 1.6rem; cursor: pointer; color: var(--border);
+      transition: color .15s;
+      text-transform: none; letter-spacing: 0;
+      padding: 0; line-height: 1;
+    }
+    .star-picker input[type="radio"]:checked ~ label.star-lbl,
+    .star-picker label.star-lbl:hover,
+    .star-picker label.star-lbl:hover ~ label.star-lbl {
+      color: var(--accent);
+    }
+
+    .btn-submit {
+      grid-column: 1 / -1;
+      background: var(--accent); color: #000;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.1rem; letter-spacing: 2px;
+      border: none; border-radius: 3px;
+      padding: 16px 32px; cursor: pointer;
+      transition: background .2s, transform .15s;
+      margin-top: 8px;
+    }
+    .btn-submit:hover { background: #d4ff26; transform: translateY(-1px); }
+    .btn-submit:active { transform: translateY(0); }
+
+    /* ── TOAST ── */
+    .toast {
+      position: fixed; bottom: 32px; right: 32px; z-index: 999;
+      background: var(--accent); color: #000;
+      font-family: 'DM Mono', monospace;
+      font-size: .8rem; letter-spacing: .08em;
+      padding: 14px 24px; border-radius: 3px;
+      transform: translateY(80px); opacity: 0;
+      transition: all .4s cubic-bezier(.34,1.56,.64,1);
+      pointer-events: none;
+    }
+    .toast.show { transform: translateY(0); opacity: 1; }
+
+    /* ── DIVIDER ── */
+    .divider {
+      display: flex; align-items: center; gap: 16px;
+      margin-bottom: 40px;
+    }
+    .divider-label {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem; letter-spacing: 1px; white-space: nowrap;
+    }
+    .divider-line { flex: 1; height: 1px; background: var(--border); }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 48px;
+      text-align: center;
+      color: var(--muted); font-size: .8rem;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 700px) {
+      header { padding: 16px 20px; }
+      nav a { margin-left: 16px; font-size: .75rem; }
+      .hero { padding: 70px 20px 40px; }
+      section { padding: 0 20px 60px; }
+      .stats { flex-direction: column; }
+      .stat { border-right: none; border-bottom: 1px solid var(--border); }
+      form { grid-template-columns: 1fr; }
+      .field.full { grid-column: 1; }
+      .btn-submit { grid-column: 1; }
+      footer { padding: 24px 20px; }
     }
   </style>
 </head>
+<body>
 
-<body class="text-white">
+<header>
+  <a href="https://frame2brand.github.io/index.html" class="logo">Frame2Brand</a>
+  <nav>
+    <a href="https://frame2brand.github.io/index.html">Home</a>
+    <a href="https://frame2brand.github.io/services.html">Services</a>
+    <a href="https://frame2brand.github.io/pricing.html">Pricing</a>
+    <a href="#" class="active">Testimonials</a>
+  </nav>
+</header>
 
-<!-- NAVBAR -->
-<nav class="fixed w-full z-50 bg-black/70 backdrop-blur-md border-b border-gray-800 animate-fadeIn">
-  <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
-    <h1 class="text-xl font-bold text-orange-500">Frame2Brand</h1>
-    <div class="space-x-6 hidden md:flex text-sm text-gray-300">
-      <a href="index.html" class="hover:text-orange-400 transition">Home</a>
-      <a href="services.html" class="hover:text-orange-400 transition">Services</a>
-      <a href="pricing.html" class="hover:text-orange-400 transition">Pricing</a>
-      <a href="testimonials.html" class="text-orange-400 font-semibold">Testimonials</a>
+<div class="hero">
+  <p class="hero-label">// Client Results</p>
+  <h1>What Brands<br><span>Actually Say</span></h1>
+  <p>Unfiltered feedback from founders, creators, and marketers who made the switch.</p>
+</div>
+
+<section>
+
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-num" id="total-count">0</div>
+      <div class="stat-label">Total Reviews</div>
     </div>
-    <button class="bg-orange-500 hover:bg-orange-600 px-5 py-2 rounded-lg font-medium transition">
-      Get Started
-    </button>
-  </div>
-</nav>
-
-<!-- HERO SECTION -->
-<section class="min-h-[60vh] flex items-center justify-center text-center gradient-bg px-6 pt-24">
-  <div class="max-w-4xl">
-    <h1 class="text-5xl md:text-6xl font-extrabold leading-tight animate-fadeInUp">
-      What Our <span class="text-orange-500">Clients Say</span>
-    </h1>
-    <p class="mt-6 text-gray-400 text-lg max-w-2xl mx-auto animate-fadeInUp delay-200">
-      Real results from brands that transformed their content strategy
-    </p>
-  </div>
-</section>
-
-<!-- TESTIMONIALS GRID -->
-<section class="py-24 px-6">
-  <div class="max-w-6xl mx-auto">
-    
-    <div class="grid md:grid-cols-3 gap-8 mb-16">
-      
-      <!-- Testimonial 1 -->
-      <div class="bg-gray-900 p-8 rounded-2xl border border-gray-800 card-hover animate-scaleIn delay-100">
-        <div class="star-rating mb-4 text-xl">★★★★★</div>
-        <p class="text-gray-300 mb-6 italic">
-          "Frame2Brand completely transformed our social media presence. Their understanding of marketing psychology is evident in every reel they create. Our engagement increased by 300% in just two months!"
-        </p>
-        <div class="flex items-center">
-          <div class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center font-bold text-lg mr-4">
-            PS
-          </div>
-          <div>
-            <h4 class="font-semibold">Priya Sharma</h4>
-            <p class="text-gray-400 text-sm">Founder, StyleHub Fashion</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Testimonial 2 -->
-      <div class="bg-gray-900 p-8 rounded-2xl border border-gray-800 card-hover animate-scaleIn delay-200">
-        <div class="star-rating mb-4 text-xl">★★★★★</div>
-        <p class="text-gray-300 mb-6 italic">
-          "The difference between Frame2Brand and traditional agencies is night and day. They don't just edit videos—they craft strategic content that actually converts. Best investment we've made."
-        </p>
-        <div class="flex items-center">
-          <div class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center font-bold text-lg mr-4">
-            RK
-          </div>
-          <div>
-            <h4 class="font-semibold">Rahul Kumar</h4>
-            <p class="text-gray-400 text-sm">CEO, TechStart Solutions</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Testimonial 3 -->
-      <div class="bg-gray-900 p-8 rounded-2xl border border-gray-800 card-hover animate-scaleIn delay-300">
-        <div class="star-rating mb-4 text-xl">★★★★★</div>
-        <p class="text-gray-300 mb-6 italic">
-          "I was skeptical about the pricing at first, but the quality and strategy behind each reel is incredible. They've helped us build a consistent brand identity across all platforms."
-        </p>
-        <div class="flex items-center">
-          <div class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center font-bold text-lg mr-4">
-            AM
-          </div>
-          <div>
-            <h4 class="font-semibold">Anita Mehta</h4>
-            <p class="text-gray-400 text-sm">Marketing Director, FitLife Wellness</p>
-          </div>
-        </div>
-      </div>
-
+    <div class="stat">
+      <div class="stat-num" id="avg-rating">—</div>
+      <div class="stat-label">Avg. Rating</div>
     </div>
-
-    <!-- Second Row -->
-    <div class="grid md:grid-cols-3 gap-8 mb-16">
-      
-      <!-- Testimonial 4 -->
-      <div class="bg-gray-900 p-8 rounded-2xl border border-gray-800 card-hover animate-scaleIn delay-400">
-        <div class="star-rating mb-4 text-xl">★★★★★</div>
-        <p class="text-gray-300 mb-6 italic">
-          "Their trend analysis is spot-on. They know exactly which formats work for our industry and adapt them perfectly to our brand voice. Our follower count doubled in 3 months."
-        </p>
-        <div class="flex items-center">
-          <div class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center font-bold text-lg mr-4">
-            VG
-          </div>
-          <div>
-            <h4 class="font-semibold">Vikram Gupta</h4>
-            <p class="text-gray-400 text-sm">Owner, Urban Eats Restaurant</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Testimonial 5 -->
-      <div class="bg-gray-900 p-8 rounded-2xl border border-gray-800 card-hover animate-scaleIn delay-500">
-        <div class="star-rating mb-4 text-xl">★★★★★</div>
-        <p class="text-gray-300 mb-6 italic">
-          "Finally, a service that understands the difference between pretty videos and videos that sell. Every reel drives traffic to our website. The ROI is unmatched."
-        </p>
-        <div class="flex items-center">
-          <div class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center font-bold text-lg mr-4">
-            SN
-          </div>
-          <div>
-            <h4 class="font-semibold">Sneha Nair</h4>
-            <p class="text-gray-400 text-sm">Founder, Artisan Crafts Co.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Testimonial 6 -->
-      <div class="bg-gray-900 p-8 rounded-2xl border border-gray-800 card-hover animate-scaleIn delay-600">
-        <div class="star-rating mb-4 text-xl">★★★★★</div>
-        <p class="text-gray-300 mb-6 italic">
-          "The unlimited revisions policy shows they truly care about getting it right. They work with us until every detail aligns with our vision. Exceptional service!"
-        </p>
-        <div class="flex items-center">
-          <div class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center font-bold text-lg mr-4">
-            AJ
-          </div>
-          <div>
-            <h4 class="font-semibold">Arjun Joshi</h4>
-            <p class="text-gray-400 text-sm">Creative Director, PixelPerfect Studio</p>
-          </div>
-        </div>
-      </div>
-
+    <div class="stat">
+      <div class="stat-num">100%</div>
+      <div class="stat-label">Real Clients</div>
     </div>
-
-  </div>
-</section>
-
-<!-- STATS SECTION -->
-<section class="py-24 bg-black px-6">
-  <div class="max-w-6xl mx-auto">
-    <h2 class="text-4xl font-bold mb-12 text-center animate-fadeInUp">Results That Speak</h2>
-    
-    <div class="grid md:grid-cols-4 gap-8">
-      <div class="text-center animate-fadeInUp delay-100">
-        <div class="text-5xl font-extrabold text-orange-500 mb-2">250+</div>
-        <p class="text-gray-400">Happy Clients</p>
-      </div>
-      <div class="text-center animate-fadeInUp delay-200">
-        <div class="text-5xl font-extrabold text-orange-500 mb-2">3000+</div>
-        <p class="text-gray-400">Reels Created</p>
-      </div>
-      <div class="text-center animate-fadeInUp delay-300">
-        <div class="text-5xl font-extrabold text-orange-500 mb-2">300%</div>
-        <p class="text-gray-400">Avg. Engagement Increase</p>
-      </div>
-      <div class="text-center animate-fadeInUp delay-400">
-        <div class="text-5xl font-extrabold text-orange-500 mb-2">98%</div>
-        <p class="text-gray-400">Client Satisfaction</p>
-      </div>
+    <div class="stat">
+      <div class="stat-num">Live</div>
+      <div class="stat-label">Auto-Published</div>
     </div>
   </div>
-</section>
 
-<!-- VIDEO TESTIMONIAL SECTION -->
-<section class="py-24 px-6 gradient-bg">
-  <div class="max-w-4xl mx-auto text-center">
-    <h2 class="text-4xl font-bold mb-6 animate-fadeInUp">See The Transformation</h2>
-    <p class="text-gray-400 mb-12 animate-fadeInUp delay-100">Watch how we've helped brands elevate their content game</p>
-    
-    <div class="bg-gray-900 p-4 rounded-2xl border border-gray-800 animate-scaleIn delay-200">
-      <div class="aspect-video bg-gray-800 rounded-xl flex items-center justify-center">
-        <div class="text-center">
-          <div class="w-20 h-20 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
-            <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M8 5v14l11-7z"/>
-            </svg>
-          </div>
-          <p class="text-gray-400">Video Testimonial Coming Soon</p>
+  <div class="divider">
+    <span class="divider-label">Client Testimonials</span>
+    <div class="divider-line"></div>
+  </div>
+  <div class="testimonials-grid" id="grid"></div>
+
+  <div class="divider">
+    <span class="divider-label">Share Your Experience</span>
+    <div class="divider-line"></div>
+  </div>
+  <div class="form-wrapper">
+    <div class="form-header">
+      <h2>Leave a Review</h2>
+      <span>Instantly published · No approval wait</span>
+    </div>
+    <form id="reviewForm">
+      <div class="field">
+        <label>Your Name *</label>
+        <input type="text" id="f-name" placeholder="e.g. Priya Nair" required />
+      </div>
+      <div class="field">
+        <label>Your Role / Business *</label>
+        <input type="text" id="f-role" placeholder="e.g. Founder, StyleBrand" required />
+      </div>
+      <div class="field full">
+        <label>Your Review *</label>
+        <textarea id="f-review" placeholder="What changed after working with Frame2Brand? Be specific — it helps others." required></textarea>
+      </div>
+      <div class="field full">
+        <label>Star Rating *</label>
+        <div class="star-picker" id="starPicker">
+          <input type="radio" id="s5" name="stars" value="5">
+          <label class="star-lbl" for="s5">★</label>
+          <input type="radio" id="s4" name="stars" value="4">
+          <label class="star-lbl" for="s4">★</label>
+          <input type="radio" id="s3" name="stars" value="3">
+          <label class="star-lbl" for="s3">★</label>
+          <input type="radio" id="s2" name="stars" value="2">
+          <label class="star-lbl" for="s2">★</label>
+          <input type="radio" id="s1" name="stars" value="1">
+          <label class="star-lbl" for="s1">★</label>
         </div>
       </div>
-    </div>
+      <button class="btn-submit" type="button" onclick="submitReview()">Publish My Review →</button>
+    </form>
   </div>
+
 </section>
 
-<!-- CTA -->
-<section class="py-24 text-center">
-  <h2 class="text-4xl font-bold mb-6 animate-fadeInUp">Join Our Success Stories</h2>
-  <p class="text-gray-400 mb-8 animate-fadeInUp delay-100">Start your brand transformation today</p>
-  <button class="bg-orange-500 px-10 py-4 rounded-2xl text-lg font-semibold orange-glow hover:scale-105 transition animate-fadeInUp delay-200">
-    Get Started Now
-  </button>
-</section>
+<footer>© 2026 Frame2Brand. Video strategy without agency overhead.</footer>
+<div class="toast" id="toast">✓ Review published live!</div>
 
-<!-- FOOTER -->
-<footer class="bg-black border-t border-gray-800 py-10 text-center text-gray-500">
-  <p>© 2026 Frame2Brand. Video strategy without agency overhead.</p>
-</footer>
+<script>
+  const KEY = 'f2b_testimonials_v1';
+  const COLORS = ['', 'c2', 'c3', 'c4'];
 
+  const SEED = [
+    { name: 'Arjun Mehta', role: 'Founder, NovaDrop', review: "Frame2Brand didn't just edit our reels — they rebuilt how we show up online. Our follower conversion rate tripled within 6 weeks. This is brand strategy, not video editing.", stars: 5, date: '2026-02-14', seed: true },
+    { name: 'Lisa Thornton', role: 'E-Commerce Director, Velour', review: "We'd tried two other agencies before. Frame2Brand was the first team that actually asked about our buyer psychology. Every reel now does the heavy lifting our paid ads used to.", stars: 5, date: '2026-02-28', seed: true },
+    { name: 'Kiran S.', role: 'Content Creator, 280K followers', review: "The hook framework they use is genuinely different. I went from 3% watch-through to 18% in one month. These guys understand the algorithm AND human attention spans.", stars: 5, date: '2026-03-05', seed: true }
+  ];
+
+  function loadReviews() {
+    try { return JSON.parse(localStorage.getItem(KEY)) || []; } catch { return []; }
+  }
+  function saveReviews(list) {
+    try { localStorage.setItem(KEY, JSON.stringify(list)); } catch {}
+  }
+
+  function esc(str) {
+    return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  }
+
+  function cardHTML(r, idx, isNew) {
+    const cls = COLORS[idx % COLORS.length];
+    const initials = r.name.split(' ').map(w => w[0]).join('').substring(0,2).toUpperCase();
+    const filled = '★'.repeat(r.stars);
+    const empty = '☆'.repeat(5 - r.stars);
+    const badge = isNew
+      ? `<div class="t-badge new">New</div>`
+      : (r.seed ? `<div class="t-badge">Featured</div>` : '');
+    return `<div class="t-card" style="animation-delay:${idx * .07}s">
+      ${badge}
+      <div class="t-top">
+        <div class="t-avatar ${cls}">${initials}</div>
+        <div class="stars">${filled}${empty}</div>
+      </div>
+      <div class="t-quote">${esc(r.review)}</div>
+      <div class="t-name">${esc(r.name)}</div>
+      <div class="t-role">${esc(r.role)}</div>
+    </div>`;
+  }
+
+  function renderGrid(highlightFirst) {
+    const user = loadReviews();
+    const all = [...user, ...SEED];
+    const grid = document.getElementById('grid');
+    if (!all.length) {
+      grid.innerHTML = '<div class="empty-state"><p>No reviews yet — be the first to share your experience.</p></div>';
+    } else {
+      grid.innerHTML = all.map((r, i) => cardHTML(r, i, highlightFirst && i === 0)).join('');
+    }
+    document.getElementById('total-count').textContent = all.length;
+    if (all.length) {
+      const avg = (all.reduce((s, r) => s + r.stars, 0) / all.length).toFixed(1);
+      document.getElementById('avg-rating').textContent = avg + '★';
+    }
+  }
+
+  function submitReview() {
+    const name   = document.getElementById('f-name').value.trim();
+    const role   = document.getElementById('f-role').value.trim();
+    const review = document.getElementById('f-review').value.trim();
+    const sel    = document.querySelector('input[name="stars"]:checked');
+
+    if (!name)   { alert('Please enter your name.'); return; }
+    if (!role)   { alert('Please enter your role or business.'); return; }
+    if (!review) { alert('Please write your review.'); return; }
+    if (!sel)    { alert('Please select a star rating.'); return; }
+
+    const list = loadReviews();
+    list.unshift({ name, role, review, stars: parseInt(sel.value), date: new Date().toISOString().split('T')[0] });
+    saveReviews(list);
+    renderGrid(true);
+    document.getElementById('reviewForm').reset();
+    const t = document.getElementById('toast');
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 3200);
+  }
+
+  renderGrid(false);
+</script>
 </body>
 </html>
